@@ -15,7 +15,7 @@
 
 Here is the solution: **Eclypse_The_Sunshine_Manager**
 
-Eclypse is a centralized web-based management system designed to simplify the management of multiple Sunshine virtual machines and physical computers in your IT infrastructure. It provides a secure, role-based interface for administrators to register Sunshine servers, assign access permissions to users, and handle secure client-server pairing without exposing sensitive credentials.
+Eclypse is a centralized management system designed to simplify the management of multiple Sunshine servers. It handle secure client-server pairing without exposing sunshine credentials to the end users.
 
 ### Key Features:
 - **Centralized VM Management**: Register and manage multiple Sunshine machines from a single interface
@@ -31,7 +31,7 @@ Eclypse is a centralized web-based management system designed to simplify the ma
 - **Operating System**: Linux distribution (Debian/Ubuntu recommended)
 - **Docker** : Docker et Docker Compose installed
 - **Git**: For cloning the repository
-- **Network Access**: Port 443 (HTTPS) available for the web interface
+- **Network**: Port 443 (HTTPS) available for the web interface
 
 ---
 
@@ -48,34 +48,9 @@ cd Eclypse_The-Sunshine-Manager
 docker-compose up -d
 ```
 
-That's it! The application will be available at `https://your-server-ip`
-
 ![Server Deployment](docs/gifs/server-deployement.gif)
 
----
-
-## Configuration
-
-### Environment Variables
-The following environment variables can be customized in `docker-compose.yml`:
-
-```yaml
-environment:
-  - DB_USER=myuser          # PostgreSQL username
-  - DB_PASS=mypass          # PostgreSQL password
-  - DB_HOST=localhost       # Database host
-  - DB_PORT=5432           # Database port
-  - DB_NAME=vdi_db         # Database name
-  - JWT_SECRET_KEY=your-secret-key  # JWT encryption key
-  - ADMIN_USER=admin       # Default admin username
-  - ADMIN_PASS=admin1234   # Default admin password
-  - ADMIN_ROLE=master      # Default admin role
-```
-
-### SSL Certificates
-For production use, it's recommended to:
-- Generate valid SSL certificates (Let's Encrypt, internal CA, etc.)
-- Place certificates in the appropriate directory
+That's it! The application will be available at `https://your-server-ip`
 
 ---
 
@@ -83,19 +58,34 @@ For production use, it's recommended to:
 
 ### 1. Register Sunshine Servers
 - Use client\add_vm_gui.py
+(Python with customtkinter requests PyJWT urllib3 is required)
+
 - Log in as an admin/master user
+![VM Authentication](img/add_vm_auth.png)
+
 - Provide hostname, IP address, and Sunshine credentials
+![Add VM Interface](img/add_vm_added.png)
 
 ### 2. Create User Accounts
-- Use client\eclypse.py
+- Use client\eclypse.py or eclypse.exe
+- Sign in as a default admin
+![Eclypse Login](docs/img/eclypse_login.png)
+
 - Create User account in user tab
+![User Creation Interface](docs/img/eclypse_user_creation.png)
+
 
 ### 3. Assign VMs to Users
 - Users will only see VMs they're authorized to access
 
 ### 4. Client Pairing
-- Use client\eclypse.py
+- Use client\eclypse.py or eclypse.exe
+- Sign in as a user (without admin privileges)
+![Eclypse Login](docs/img/eclypse_login.png)
+
 - Connect to the VM
+![Eclypse Login](docs/img/connect.png)
+
 
 ---
 
@@ -105,3 +95,11 @@ For production use, it's recommended to:
 - **Network Security**: Restrict access to the management interface using firewall rules
 - **SSL Certificates**: **Do not use default** SSL certificates for production deployments
 - **Regular Updates**: Keep the application and dependencies updated
+
+---
+
+## What's next ?
+
+- Full English translation of the project
+- Keycloak integration
+- Full-fledged deploiement guide on youtube
