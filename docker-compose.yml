@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: vdi_db
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypass
+      POSTGRES_DB: vdi_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - vdi_network
+
+  api:
+    container_name: vdi_api
+    build:
+      context: ./server
+      dockerfile: Dockerfile  
+    
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: myuser
+      DB_PASS: mypass
+      DB_NAME: vdi_db
+      JWT_SECRET_KEY: "SUPER_SECRET_KEY"
+      ADMIN_USER: "admin"
+      ADMIN_PASS: "Test1234"
+      ADMIN_ROLE: "master"
+    volumes:
+      - ./server:/app
+    depends_on:
+      - db
+    networks:
+      - vdi_network
+    ports:
+      - "443:443"
+    command: >
+      sh -c "
+        echo 'Attente de 10 secondes pour PostgreSQL...' &&
+        sleep 10 &&
+        echo 'Demarrage de l API...' &&
+        uvicorn main:app --host 0.0.0.0 --port 443 --ssl-keyfile=key.pem --ssl-certfile=cert.pem
+      "
+    extra_hosts:
+      - "192.168.1.40:host-gateway"
+
+networks:
+  vdi_network:
+    driver: bridge
+
+volumes:
+  db_data:
+
+
