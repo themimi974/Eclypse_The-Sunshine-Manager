@@ -1,5 +1,4 @@
 <div align="center">
-<div align="center">
   <img src="https://raw.githubusercontent.com/LizardByte/Sunshine/refs/heads/master/sunshine.png" alt="Sunshine Logo" width="200" height="200"/>
   <img src="https://avatars.githubusercontent.com/u/6118379" alt="Moonlight Logo" width="200" height="200"/>
 </div>
