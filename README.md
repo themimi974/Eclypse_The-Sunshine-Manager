@@ -61,10 +61,10 @@ That's it! The application will be available at `https://your-server-ip`
 (Python with customtkinter requests PyJWT urllib3 is required)
 
 - Log in as an admin/master user
-![VM Authentication](img/add_vm_auth.png)
+![VM Authentication](docs/img/add_vm_auth.png)
 
 - Provide hostname, IP address, and Sunshine credentials
-![Add VM Interface](img/add_vm_added.png)
+![Add VM Interface](docs/img/add_vm_added.png)
 
 ### 2. Create User Accounts
 - Use client\eclypse.py or eclypse.exe
