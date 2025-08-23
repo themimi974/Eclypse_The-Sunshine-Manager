@@ -50,6 +50,8 @@ docker-compose up -d
 
 That's it! The application will be available at `https://your-server-ip`
 
+![Server Deployment](docs/gifs/server-deployement.gif)
+
 ---
 
 ## Configuration
