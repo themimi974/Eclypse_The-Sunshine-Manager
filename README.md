@@ -42,7 +42,7 @@ That's it! The application will be available at `https://your-server-ip`
 
 ### **PLEASE TAKE A LOOK AT THE USAGE DOCUMENTATION LOCATED HERE**
 
-[Introduction Guide](./Introduction.md)
+[Introduction Guide](./Usage.md)
 
 ---
 
