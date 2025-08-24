@@ -1,5 +1,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/LizardByte/Sunshine/refs/heads/master/sunshine.png" alt="Sunshine Logo" width="100" height="100"/>
+  <img src="https://cdn-icons-png.flaticon.com/512/3939/3939748.png" alt="Sunshine Logo" width=auto height="100"/>
   <img src="https://avatars.githubusercontent.com/u/6118379" alt="Moonlight Logo" width="100" height="100"/>
 </div>
 
@@ -16,6 +17,8 @@
 Here is the solution: **Eclypse_The_Sunshine_Manager**
 
 Eclypse is a centralized management system designed to simplify the management of multiple Sunshine servers. It handle secure client-server pairing without exposing sunshine credentials to the end users.
+
+[![Get Client](https://img.shields.io/badge/Get%20Client-Download%20v0-blue?style=for-the-badge&logo=download)](https://github.com/themimi974/Eclypse_The-Sunshine-Manager/releases/tag/v0)
 
 ---
 
@@ -39,6 +42,9 @@ That's it! The application will be available at `https://your-server-ip`
 ---
 
 ## Usage
+
+
+[![Get Client](https://img.shields.io/badge/Get%20Client-Download%20v0-blue?style=for-the-badge&logo=download)](https://github.com/themimi974/Eclypse_The-Sunshine-Manager/releases/tag/v0)
 
 ### **PLEASE TAKE A LOOK AT THE USAGE DOCUMENTATION LOCATED HERE**
 
