@@ -1,5 +1,5 @@
 ### 1. Register Sunshine Servers
-- Use client\add_vm_gui.py
+- Use client\add_vm_gui.py or AddVMTool.exe
 (Python with customtkinter requests PyJWT urllib3 is required)
 
 - Log in as an admin/master user
@@ -13,7 +13,7 @@
 ---
 
 ### 2. Create User Accounts
-- Use client\eclypse.py or eclypse.exe
+- Use client\eclypse.py or EclypseClient.exe
 - Sign in as a default admin
 
 ![Eclypse Login](docs/img/eclypse_login.png)
@@ -32,7 +32,7 @@
 ---
 
 ### 4. Client Pairing
-- Use client\eclypse.py or eclypse.exe
+- Use client\eclypse.py or EclypseClient.exe
 - Sign in as a user (without admin privileges)
 
 ![Eclypse Login](docs/img/eclypse_login.png)
